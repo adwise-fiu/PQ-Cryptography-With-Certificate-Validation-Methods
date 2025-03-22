@@ -23,9 +23,12 @@ Can be used to quickly create CA infrastructure & accompanying certificates:
     - Dilithium2
     - Dilithium3
     - Dilithium5
-    - SPHINCS<sup>+</sup>-Haraka
+    - ~~SPHINCS<sup>+</sup>-Haraka~~	_deprecated_
     - SPHINCS<sup>+</sup>-SHA256
     - SPHINCS<sup>+</sup>-SHAKE256
+    - Hybrid: ECDSA (P256) + Dilithium 2
+    - Hybrid: ECDSA (P256) + Falcon512
+    - Hybrid: ECDSA (P256) + SPHINCS<sup>+</sup>-SHA256
 3. [openssl.cnf](openssl.cnf) <br>
 Is the accompanying config file for proper execution of #2. You can modify as needed if necessary. Key sections are listed below: <pre>[RootCA]</pre> <pre>[InterCA]</pre> <pre>[v3_ca]</pre> <pre>[v3_ocsp]</pre> <pre>[v3_server]&ast;</pre>  <pre>[v3_client]&ast;</pre> 
 &ast; - It is particularly important to edit the *authorityInfoAccess* attribute under these sections, as this defines the OCSP URL for certs signed with these extensions.
@@ -42,7 +45,7 @@ Is the accompanying config file for proper execution of #2. You can modify as ne
 ###############################################################################</pre>
 This section has parameters that **MUST** be appropriately set for proper execution. The default values should work fine, but you will likely want to customize certain attributes, such as the certificate subject details, passphrase, etc.
 
-Once you are satisfied with the configuration, simply `./<script name>` to run the script
+Once satisfied with the configuration, simply run the script.
 
 ## Notes
-- The scripts in this repo may not be executable by default. This is intentional to maybe stop people from just running things without reading first, and is fixable with the standard `chmod +x <script name>`
+- The scripts in this rep _may_ not be executable by default.
