@@ -29,7 +29,7 @@ conffile=$BASE_DIR/openssl.cnf
 #You will have to change a lot in this script f you don't use the config file included with this repo
 
 #Algorithms to generate certs with:
-ALGS=("rsa" "ecdsa" "eddsa" "falcon512" "falcon1024" "dilithium2" "dilithium3" "dilithium5" "sphincsharaka128fsimple" "sphincssha256128ssimple" "sphincsshake256128fsimple")
+ALGS=("rsa" "ecdsa" "eddsa" "falcon512" "falcon1024" "dilithium2" "dilithium3" "dilithium5" "sphincsharaka128fsimple" "sphincssha256128ssimple" "sphincsshake256128fsimple" "p256_dilithium2" "p256_falcon512" "p256_sphincssha256128ssimple")
 # rsa, ecdsa, & eddsa are specially coded - for PQ algorithms, make sure the name matches exactly with what is listed by liboqs, and it should work if OpenSSL has been compiled with support for those algorithms
 
 #--------------------------- CERTIFICATE SUBJECT DN ---------------------------
